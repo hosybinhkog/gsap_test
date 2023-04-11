@@ -148,7 +148,7 @@ const NewArrial = () => {
   }, []);
 
   return (
-    <Section ref={ref}>
+    <Section ref={ref} className="new-arrival">
       <Overlay />
       <Title
         data-scroll

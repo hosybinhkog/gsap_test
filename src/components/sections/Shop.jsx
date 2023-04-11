@@ -158,7 +158,7 @@ const Shop = () => {
   }, []);
 
   return (
-    <SectionShop ref={ref}>
+    <SectionShop ref={ref} id="shop">
       <Title scroll-data scroll-data-speed="-1">
         New Collections
       </Title>

@@ -13,6 +13,14 @@ const GlobalStyles = createGlobalStyle`
     font-size: 62.5%;
     font-family: 'Sirin Stencil', cursive;
     scroll-behavior:"smooth";
+
+    @media screen and (max-width: 1024px){
+      font-size: 56.25%
+    }
+
+    @media screen and (max-width: 767px){
+      font-size: 47.5%
+    }
   }
 
   body{

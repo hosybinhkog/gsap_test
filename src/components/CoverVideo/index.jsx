@@ -12,6 +12,13 @@ const VideoContainer = Styled.section`
     width: 100%;
     height: 100vh;
     object-fit: cover;
+
+    @media screen and (max-width: 76.8rem){
+      object-position: center 10%;
+    }
+    @media screen and (max-width: 48rem){
+      object-position: center 50%;
+    }
   }
 `;
 

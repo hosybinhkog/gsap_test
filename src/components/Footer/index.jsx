@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import Styled from 'styled-components';
-
+import { useLocomotiveScroll } from 'react-locomotive-scroll';
 import logoImage from '../../assets/Svgs/star_white_48dp.svg';
 
 const Section = Styled.section`
@@ -79,11 +79,23 @@ const Bottom = Styled.div`
 `;
 
 const Footer = () => {
+  const { scroll } = useLocomotiveScroll();
+
+  const handleScroll = (id) => {
+    let elem = document.querySelector(id);
+    scroll.scrollTo(elem, {
+      offset: '-100',
+      duration: '2000',
+      easing: [0.25, 0.0, 0.35, 1],
+    });
+  };
   return (
     <Section>
       <LogoContainer>
-        <img src={logoImage} alt="" />
-        <h3>Wibe Studio</h3>
+        <img data-scroll data-scroll-speed="2" src={logoImage} alt="" />
+        <h3 data-scroll data-scroll-speed="-1">
+          Wibe Studio
+        </h3>
       </LogoContainer>
       <FooterComponent
         initial={{ y: '-400px' }}
@@ -94,10 +106,10 @@ const Footer = () => {
         }}
       >
         <ul>
-          <li>home</li>
-          <li>bout</li>
-          <li>shop</li>
-          <li>new arrival</li>
+          <li onClick={() => handleScroll('#home')}>home</li>
+          <li onClick={() => handleScroll('.about')}>bout</li>
+          <li onClick={() => handleScroll('#shop')}>shop</li>
+          <li onClick={() => handleScroll('#new-arrival')}>new arrival</li>
           <li>
             <a href="https://google" target="_blank" rel="noopener noreferrer">
               Look book
@@ -110,8 +122,20 @@ const Footer = () => {
           </li>
         </ul>
         <Bottom>
-          <span>&copy; {new Date().getFullYear()}. All Rights Reserved.</span>
-          <span>Make with &hearts; by</span>
+          <span
+            data-scroll
+            data-scroll-speed="2"
+            data-scroll-direction="horizontal"
+          >
+            &copy; {new Date().getFullYear()}. All Rights Reserved.
+          </span>
+          <span
+            data-scroll
+            data-scroll-speed="-2"
+            data-scroll-direction="horizontal"
+          >
+            Make with &hearts; by
+          </span>
           <a href="https://google.com" target="_black" rel="noreferer">
             Google
           </a>
