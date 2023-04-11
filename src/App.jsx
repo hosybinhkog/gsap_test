@@ -6,7 +6,14 @@ import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 import { AnimatePresence } from 'framer-motion';
-import { About, Banner, Home, Shop, StrollTriggerProxy } from './components';
+import {
+  About,
+  Banner,
+  Footer,
+  Home,
+  Shop,
+  StrollTriggerProxy,
+} from './components';
 import NewArrial from './components/NewArrial';
 
 function App() {
@@ -30,6 +37,7 @@ function App() {
               <Shop />
               <Banner />
               <NewArrial />
+              <Footer />
             </main>
           </AnimatePresence>
         </LocomotiveScrollProvider>
